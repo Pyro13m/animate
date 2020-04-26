@@ -1,0 +1,40 @@
+{% extends "home/header-footer.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+  {% block extra-header %}
+    <link rel="stylesheet" href="{% static "home/css/review_styles.css" %}">
+  {% endblock %}
+
+  {% block content %}
+
+  <div class="container-fluid form_div">
+    <form class="form" method="POST">
+      {{ form|crispy }}
+      {% csrf_token %} 
+      <input type="submit" class="btn btn-outline-light btn-lg" value="Submit"/>
+    </form>
+  </div>
+
+  <div class="container-fluid">
+    <h2>All Reviews:</h2>
+    <br>
+    {% if form %}
+    <table align="center">
+      <thead>
+        <th> Name </th>
+        <th> Review </th> 
+      </thead>
+      {% for r in form_data %}
+        <tr>
+          <td> {{ r.Name }}</td>
+          <td> {{ r.Review }}</td>
+        </tr>
+      {% endfor %}
+      </table>
+      {% endif %}
+  </div>
+
+{% endblock %}
+
+
