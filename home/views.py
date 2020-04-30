@@ -28,15 +28,18 @@ def reviews(request):
 def freePlan(request):
     request.session['plan']='free-plan' 
     request.session['mailid']='mpriyom02@gmail.com'
-    return render(request,'home/login.html',{'plan': "free-plan"})
+    return render(request,'home/login.html',{'plan': request.session.get('plan')})
 
 def paidPlan(request):
     request.session['plan']='paid-plan'
     request.session['mailid']='gupta.kirti0808@gmail.com'
-    return render(request,'home/login.html',{'plan': "paid-plan"})
+    return render(request,'home/login.html',{'plan': request.session.get('plan')})
 
 def login(request):
-    return render(request,'home/login.html',{'plan': request.session.get('plan'), 'mailid':request.session.get('mailid')})
+    plan=request.session.get('plan')
+    redirectLink='/'+ plan
+    return redirect(redirectLink)
+    # return render(request,'home/login.html',{'plan': request.session.get('plan'), 'mailid':request.session.get('mailid')})
 
 
 # def login(request, plan="paid-plan"):
