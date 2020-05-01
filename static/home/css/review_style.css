@@ -1,0 +1,13 @@
+.container-fluid.form_div{
+    background-color: #ff4c68;
+}
+.container-fluid.reviewlist{
+    background-color: #f8f8f8;
+}
+.card{
+    border: none; 
+    background-color: #f8f8f8;
+}
+.card .card-body{
+    padding: 0px;
+}

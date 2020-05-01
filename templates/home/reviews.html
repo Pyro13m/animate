@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 
   {% block extra-header %}
-    <link rel="stylesheet" href="{% static "home/css/review_styles.css" %}">
+    <link rel="stylesheet" href="{% static "home/css/review_style.css" %}">
   {% endblock %}
 
   {% block content %}
@@ -16,24 +16,47 @@
     </form>
   </div>
 
-  <div class="container-fluid">
+  <div class="container-fluid reviewlist" style="">
+    <br>
     <h2>All Reviews:</h2>
     <br>
     {% if form %}
-    <table align="center">
-      <thead>
-        <th> Name </th>
-        <th> Review </th> 
-      </thead>
-      {% for r in form_data %}
-        <tr>
-          <td> {{ r.Name }}</td>
-          <td> {{ r.Review }}</td>
-        </tr>
+      {% for r in reviews %}
+        <div class="card mb-4" style="">
+          <div class="card-body" style="">
+            <p><strong> {{r.Name|safe}}: </strong> {{r.Review|safe}} </p>
+          </div>
+        </div>
       {% endfor %}
-      </table>
       {% endif %}
+
+  <div class="container-fluid">
+    <span class="step-links">
+
+    {% if reviews.has_previous %}
+      <a class="btn btn-dark mb-4" href="?page=1">First</a>
+      <a class="btn btn-dark mb-4" href="?page={{reviews.previous_page_number}}">Previous</a>
+    {% endif %}
+
+    {% for num in reviews.paginator.page_range %}
+      {% if reviews.number == num %}
+       <span class="current">
+        <a class="btn btn-dark mb-4" href="?page={{num}}">{{num}}</a>
+       </span>
+      {% elif num > reviews.number|add:'-3' and num < reviews.number|add:'3' %}
+        <a class="btn btn-dark mb-4" href="?page={{num}}">{{num}}</a>
+      {% endif %}
+    {% endfor %}
+
+    {% if reviews.has_next %}
+      <a class="btn btn-dark mb-4" href="?page={{reviews.next_page_number}}">Next</a>
+      <a class="btn btn-dark mb-4" href="?page={{reviews.paginator.num_pages}}">Last</a>
+    {% endif %}
+
+    </span>
   </div>
+  </div>
+
 
 {% endblock %}
 
