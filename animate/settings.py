@@ -147,3 +147,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 django_heroku.settings(locals())
 
 # web: gunicorn animate.wsgi --log-file -
+# web : python animate/manage.py runserver 0.0.0.0:8080

@@ -1,1 +1,1 @@
-web : python animate/manage.py runserver 0.0.0.0:8080
+web: gunicorn animate.wsgi --log-file -
