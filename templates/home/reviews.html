@@ -3,27 +3,30 @@
 {% load crispy_forms_tags %}
 
   {% block extra-header %}
-    <link rel="stylesheet" href="{% static "home/css/review_style.css" %}">
+    <link rel="stylesheet" href="{% static "home/css/review_styles.css" %}">
   {% endblock %}
 
   {% block content %}
 
   <div class="container-fluid form_div">
     <form class="form" method="POST">
-      {{ form|crispy }}
-      {% csrf_token %} 
+      {% csrf_token %}
+      {% for field in form %}
+        {{ field }}
+        <br>
+      {% endfor %}
       <input type="submit" class="btn btn-outline-light btn-lg" value="Submit"/>
     </form>
   </div>
 
-  <div class="container-fluid reviewlist" style="">
+  <div class="container-fluid reviewlist">
     <br>
     <h2>All Reviews:</h2>
     <br>
     {% if form %}
       {% for r in reviews %}
-        <div class="card mb-4" style="">
-          <div class="card-body" style="">
+        <div class="card mb-4">
+          <div class="card-body">
             <p><strong> {{r.Name|safe}}: </strong> {{r.Review|safe}} </p>
           </div>
         </div>

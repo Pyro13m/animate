@@ -1,5 +1,6 @@
 .container-fluid.form_div{
     background-color: #ff4c68;
+    padding: 2% 0%;
 }
 .container-fluid.reviewlist{
     background-color: #f8f8f8;
@@ -10,4 +11,11 @@
 }
 .card .card-body{
     padding: 0px;
+}
+
+input, textarea{
+    border-radius: 5px;
+    margin-top: 2%;
+    padding: 1%;
+    outline: none;
 }
