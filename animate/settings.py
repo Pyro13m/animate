@@ -25,7 +25,7 @@ STATIC_DIR = os.path.join(BASE_DIR,"static")
 SECRET_KEY = '(phyfopneyht2*qi2$6ca4r1y0h=gz06$3a(1nz^3=&lp*(6r3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -137,9 +137,9 @@ USE_TZ = True
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATICFILES_DIRS = [
-    STATIC_ROOT
+    STATIC_DIR
     ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
