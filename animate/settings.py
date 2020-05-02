@@ -145,3 +145,5 @@ STATICFILES_DIRS = [
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 django_heroku.settings(locals())
+
+# web: gunicorn animate.wsgi --log-file -
