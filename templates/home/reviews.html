@@ -1,0 +1,66 @@
+{% extends "home/header-footer.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+  {% block extra-header %}
+    <link rel="stylesheet" href="{% static "home/css/review_styles.css" %}">
+  {% endblock %}
+
+  {% block content %}
+
+  <div class="container-fluid form_div">
+    <form class="form" method="POST">
+      {% csrf_token %}
+      {% for field in form %}
+        {{ field }}
+        <br>
+      {% endfor %}
+      <input type="submit" class="btn btn-outline-light btn-lg" value="Submit"/>
+    </form>
+  </div>
+
+  <div class="container-fluid reviewlist">
+    <br>
+    <h2>All Reviews:</h2>
+    <br>
+    {% if form %}
+      {% for r in reviews %}
+        <div class="card mb-4">
+          <div class="card-body">
+            <p><strong> {{r.Name|safe}}: </strong> {{r.Review|safe}} </p>
+          </div>
+        </div>
+      {% endfor %}
+      {% endif %}
+
+  <div class="container-fluid">
+    <span class="step-links">
+
+    {% if reviews.has_previous %}
+      <a class="btn btn-dark mb-4" href="?page=1">First</a>
+      <a class="btn btn-dark mb-4" href="?page={{reviews.previous_page_number}}">Previous</a>
+    {% endif %}
+
+    {% for num in reviews.paginator.page_range %}
+      {% if reviews.number == num %}
+       <span class="current">
+        <a class="btn btn-dark mb-4" href="?page={{num}}">{{num}}</a>
+       </span>
+      {% elif num > reviews.number|add:'-3' and num < reviews.number|add:'3' %}
+        <a class="btn btn-dark mb-4" href="?page={{num}}">{{num}}</a>
+      {% endif %}
+    {% endfor %}
+
+    {% if reviews.has_next %}
+      <a class="btn btn-dark mb-4" href="?page={{reviews.next_page_number}}">Next</a>
+      <a class="btn btn-dark mb-4" href="?page={{reviews.paginator.num_pages}}">Last</a>
+    {% endif %}
+
+    </span>
+  </div>
+  </div>
+
+
+{% endblock %}
+
+

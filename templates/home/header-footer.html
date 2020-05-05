@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Animate</title>
+  <link rel="icon" href="logo1.ico">
+  <script src="https://kit.fontawesome.com/b3f91d1747.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static "home/css/header-footer.css" %}">
+  {% block extra-header %} {% endblock %}
+</head>
+
+<body>
+
+  <section id="title">
+
+    <div class="container-fluid">
+      <nav class="navbar bg-#ff4c68 navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/"><i class="fab fa-autoprefixer"></i>nimate</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="left: 3rem;">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/#testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/#pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/reviews">Reviews</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#footer">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Title -->
+
+    </div>
+  </section>
+
+  {% block content %}
+
+  {% endblock %}
+
+<footer id="footer">
+  <a href="https://www.linkedin.com/in/priyommushahary/"><i class="footer-img fab fa-linkedin fa-2x"></i></a>
+  <a href="https://www.facebook.com/priyom.mushahary.3"><i class="footer-img fab fa-facebook-square fa-2x"></i></a>
+  <a href="https://www.instagram.com/p.r.i.y.o.m/"><i class="footer-img fab fa-instagram fa-2x"></i></a>
+  <a href="mailto:mpriyom02@gmail.com"><i class="footer-img fas fa-envelope-open fa-2x"></i></a>
+  <p>© Copyright 2020 Priyom</p>
+</footer>
+
+
+</body>
+
+</html>
