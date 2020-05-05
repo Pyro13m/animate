@@ -1,5 +1,6 @@
 .home{
     background-color: #ff4c68;
+    height: 29rem;
 }
 
 
@@ -30,9 +31,10 @@
   
   .alex-img{
     transform: rotate(5deg);
-    max-width: 80%;
-    /* position: absolute; */
-    right: 2%;
+    max-width: 100%;
+    height: 30rem;
+    /* position: relative; */
+    right: 25%;
   }
   
   
@@ -40,7 +42,7 @@
   
   #features{
     padding: 7% 15%;
-    background-color: #faf4f4;
+    background-color: white;
     position: relative;
     z-index: 1;
   }
@@ -124,7 +126,7 @@
   
   
   
-  /* @media (max-width: 1312px) {
+  @media (max-width: 1028px) {
     .alex-img{
       position: static;
       transform: rotate(0);
@@ -132,5 +134,9 @@
     .title{
       text-align: center;
     }
-  } */
+    .home{
+      background-color: #ff4c68;
+      height: 47rem;
+    }
+  }
   
