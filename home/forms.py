@@ -28,6 +28,6 @@ class ReviewForm(forms.ModelForm):
         model=Review
         fields = '__all__'
         widgets = {
-            'Name': forms.TextInput(attrs={'placeholder': 'Name'}),
+            'Name': forms.TextInput(attrs={'size': 48, 'placeholder': 'Name'}),
             'Review': forms.Textarea(attrs={'cols': 50, 'rows': 4, 'placeholder': "Write your review here..."}),
         }

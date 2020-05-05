@@ -13,9 +13,25 @@
     padding: 0px;
 }
 
-input, textarea{
+input{
     border-radius: 5px;
-    margin-top: 2%;
+    margin-top: 1.5rem;
+    /* margin-right: 15.5rem; */
+    padding: 1%;
+    outline: none;
+}
+
+input[type="submit"]{
+    border-radius: 5px;
+    margin-top: 1.5rem;
+    /* margin-left: 23.75rem; */
+    /* padding: 1%; */
+    outline: none;
+}
+
+textarea{
+    border-radius: 5px;
+    margin-top: 1.5rem;   
     padding: 1%;
     outline: none;
 }
