@@ -23,7 +23,9 @@ STATIC_DIR = os.path.join(BASE_DIR,"static")
 dotenv_file = os.path.join(BASE_DIR, ".env")
 if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
-
+    DEBUG = True
+else:
+    DEBUG = False
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -31,7 +33,6 @@ if os.path.isfile(dotenv_file):
 SECRET_KEY = '(phyfopneyht2*qi2$6ca4r1y0h=gz06$3a(1nz^3=&lp*(6r3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1:8000','https://ani-mate.herokuapp.com/']
 
