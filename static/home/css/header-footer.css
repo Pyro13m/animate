@@ -50,6 +50,18 @@
     font-weight: lighter;
   }
   
+  @media (max-width: 1028px){
+    .navbar-collapse{
+      text-align: right;
+    }
+    .navbar-toggler{
+      font-size: 1.75rem;
+    }
+    .nav-link{
+      font-size: 2rem;
+    }
+  }
+
   #footer{
     /* padding: 7% 15%; */
     background-color: #ffffff;
